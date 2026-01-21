@@ -103,11 +103,11 @@ mydb = mysql.connector.connect(
 ## UI Examples
 
 ### Main Menu
-![Main Menu Screenshot](path/to/your/screenshot1.png)
+![Main Menu](UI Pictures/Main Menu.jpeg)
 
 
 ### Booking Trends
-![Booking Trends Screenshot](path/to/your/screenshot2.png)
+![Booking Trends](UI Pictures/Booking Trends.jpeg)
 
 
 ---
