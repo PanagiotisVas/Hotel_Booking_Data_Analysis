@@ -1,7 +1,7 @@
 # Hotel Booking Data Analysis
-A full-stack desktop application that analyzes hotel booking data, visualizes business KPIs and persists results into a MySQL database.
+A full-stack desktop application that analyzes hotel booking data, visualizes business KPIs, and persists results into a MySQL database.
 
-# 📊 Hotel Booking Analysis & ETL Dashboard
+# Hotel Booking Analysis & ETL Dashboard
 
 **An end-to-end data analysis tool developed to derive actionable insights from over 119,000 hotel booking records.**
 
@@ -9,7 +9,7 @@ Unlike standard analysis scripts, this is a fully interactive **Desktop Applicat
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 This application manages the full data lifecycle:
 
@@ -57,48 +57,64 @@ Ensure you have Python installed along with a local MySQL server. Install the re
 
 ```bash
 pip install pandas matplotlib mysql-connector-python
-2. Database Configuration
-Crucial Step: Before running the app, you must initialize the database structure.
+```
 
-Create the Database: Open MySQL Workbench or your Command Line and run:
+### 2. Database Configuration
+**Crucial Step:** Before running the app, you must initialize the database structure.
 
-SQL
-CREATE DATABASE Hotel_booking_analysis;
-Import the Schema: A Hotel_booking_analysis.sql file is provided in this repository. It creates all necessary tables (basic_statistics, monthly_distribution, booking_trends, etc.).
+1.  **Create the Database:**
+    Open your MySQL Workbench or Command Line and run:
+    ```sql
+    CREATE DATABASE Hotel_booking_analysis;
+    ```
 
-Via MySQL Workbench: Go to Server -> Data Import -> Select Hotel_booking_analysis.sql -> Target Schema: Hotel_booking_analysis.
+2.  **Import the Schema:**
+    A `Hotel_booking_analysis.sql` file is provided in this repository. It contains the code to create all necessary tables (`basic_statistics`, `monthly_distribution`, `booking_trends`, etc.).
 
-Via Command Line:
+    * **Via MySQL Workbench:** Go to *Server -> Data Import -> Select `Hotel_booking_analysis.sql` -> Target Schema: `Hotel_booking_analysis`*.
+    * **Via Command Line:**
+        ```bash
+        mysql -u root -p Hotel_booking_analysis < Hotel_booking_analysis.sql
+        ```
 
-Bash
-mysql -u root -p Hotel_booking_analysis < Hotel_booking_analysis.sql
-3. Connection Setup
-Open main.py and update the database credentials to match your local MySQL setup:
+### 3. Connection Setup
+Open `main.py` and update the database credentials to match your local setup:
 
-Python
+```python
 mydb = mysql.connector.connect(
     host='localhost',
     user='root',       # Change to your MySQL username
     password='root',   # Change to your MySQL password
     database='Hotel_booking_analysis'
 )
-4. Running the App
-Download the Data: Ensure the hotel_booking.csv dataset is present in the root directory (the same folder as main.py).
+ ```
 
-Launch the Dashboard:
+ ### 4. Running the App
+1.  **Download the Data:** Ensure the `hotel_booking.csv` dataset is present in the **root directory** (the same folder as `main.py`).
+2.  **Launch the Dashboard:**
+    ```bash
+    python main.py
+    ```
+3.  **Interact:** A GUI window will appear. Click on the menu buttons (e.g., "Display basic statistics") to visualize data. The application will automatically Insert/Update the SQL tables with the latest results upon every calculation.
 
-Bash
-python main.py
-Interact: A GUI window will appear. Click on the menu buttons (e.g., "Display basic statistics") to visualize data. The application will automatically Insert/Update the SQL tables with the latest results upon every calculation.
+---
 
-📸 Screenshots
-Main Menu
-(Add screenshot here, e.g., ![])
+## 📸 Screenshots
 
-Booking Trends Visualization
-(Add screenshot here, e.g., ![])
+### Main Menu
+![Main Menu Screenshot](path/to/your/screenshot1.png)
+*(Replace this path with your actual image file)*
 
-👥 Author
-Vasileios Zafeiris Computer Engineering and Informatics Department (CEID) University of Patras, Greece
+### Booking Trends
+![Booking Trends Screenshot](path/to/your/screenshot2.png)
+*(Replace this path with your actual image file)*
 
-Note: This project is for educational purposes and demonstrates the ability to build data-driven GUI applications and manage SQL pipelines via Python.
+---
+
+## Developed By:
+
+**Vasilopoulos Panagiotis**
+Computer Engineering and Informatics Department (CEID)
+University of Patras
+
+> **Note:** This project is for educational purposes and demonstrates the ability to build data-driven GUI applications and manage SQL pipelines via Python.
