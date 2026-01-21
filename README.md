@@ -1,5 +1,11 @@
 # Hotel Booking Data Analysis
-A full-stack desktop application that analyzes hotel booking data, visualizes business KPIs, and persists results into a MySQL database.
+> A full-stack desktop application that analyzes hotel booking data, visualizes business metrics, and persists insights into a MySQL database.
+
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Language](https://img.shields.io/badge/Language-Python-1f425f)
+![Library](https://img.shields.io/badge/Library-Pandas_%7C_Matplotlib-007ACC)
+![Interface](https://img.shields.io/badge/Interface-Tkinter-9cf)
+![DB](https://img.shields.io/badge/DB-MySQL-orange)
 
 # Hotel Booking Analysis & ETL Dashboard
 
@@ -21,7 +27,7 @@ This application manages the full data lifecycle:
 
 ---
 
-## 📈 Key Features
+## Key Features
 
 ### Business Intelligence Modules
 The application provides a GUI menu to visualize the following metrics:
@@ -38,7 +44,7 @@ The application provides a GUI menu to visualize the following metrics:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Language:** Python 3.x
 * **Data Processing:** Pandas, NumPy
@@ -48,7 +54,7 @@ The application provides a GUI menu to visualize the following metrics:
 
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 Follow these steps to set up the project locally.
 
@@ -62,19 +68,14 @@ pip install pandas matplotlib mysql-connector-python
 ### 2. Database Configuration
 **Crucial Step:** Before running the app, you must initialize the database structure.
 
-1.  **Create the Database:**
-    Open your MySQL Workbench or Command Line and run:
-    ```sql
-    CREATE DATABASE Hotel_booking_analysis;
-    ```
 
-2.  **Import the Schema:**
-    A `Hotel_booking_analysis.sql` file is provided in this repository. It contains the code to create all necessary tables (`basic_statistics`, `monthly_distribution`, `booking_trends`, etc.).
+1.  **Create the Database & Import the Schema:**
+    A `Database.sql` file is provided in this repository. It contains the code to create all necessary tables (`basic_statistics`, `monthly_distribution`, `booking_trends`, etc.).
 
-    * **Via MySQL Workbench:** Go to *Server -> Data Import -> Select `Hotel_booking_analysis.sql` -> Target Schema: `Hotel_booking_analysis`*.
+    * **Via MySQL Workbench:** Go to *Server -> Data Import -> Select `Database.sql` -> Target Schema: `Hotel_booking_analysis`*.
     * **Via Command Line:**
         ```bash
-        mysql -u root -p Hotel_booking_analysis < Hotel_booking_analysis.sql
+        mysql -u root -p Hotel_booking_analysis < Database.sql
         ```
 
 ### 3. Connection Setup
@@ -95,19 +96,19 @@ mydb = mysql.connector.connect(
     ```bash
     python main.py
     ```
-3.  **Interact:** A GUI window will appear. Click on the menu buttons (e.g., "Display basic statistics") to visualize data. The application will automatically Insert/Update the SQL tables with the latest results upon every calculation.
+3.  **Interact:** A GUI window will appear. Click on the menu buttons (e.g., "Select Hotel" and then "Guest Type Distribution") to visualize data. The application will automatically insert/update the SQL tables with the latest results upon every calculation.
 
 ---
 
-## 📸 Screenshots
+## UI Examples
 
 ### Main Menu
 ![Main Menu Screenshot](path/to/your/screenshot1.png)
-*(Replace this path with your actual image file)*
+
 
 ### Booking Trends
 ![Booking Trends Screenshot](path/to/your/screenshot2.png)
-*(Replace this path with your actual image file)*
+
 
 ---
 
